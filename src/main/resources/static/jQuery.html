@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <title>Jquery</title>
     <script src="jquery-3.2.1.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
 <div class="well clearfix">
     <textarea class="form-control"></textarea><br/>
+    <span>140</span>
     <button class="btn btn-primary pull-right">Tweet</button>
     <script>
         $("button").prop("disabled", true);
 
         $("textarea").on("input", function () {
+            $("span").text(140 - $(this).val().length);
             if ($(this).val().length > 0) {
                 $("button").prop("disabled", false);
             } else {
